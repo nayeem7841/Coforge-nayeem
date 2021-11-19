@@ -1,0 +1,2 @@
+1)https://www.w3schools.com/js/js_json_intro.asp
+2)https://www.tutorialspoint.com/restful/index.htm
