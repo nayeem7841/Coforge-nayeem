@@ -1,0 +1,6 @@
+{
+  "category": "mobile",
+  "description": "sumsung is good",
+  "manufacturer": "sumsung",
+  "name": "M32""unit": "1"
+}
