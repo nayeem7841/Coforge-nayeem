@@ -1,0 +1,13 @@
+steps for angular setup:
+
+1)
+https://angular.io/guide/setup-local
+
+E:\coforge2021\coforge2021\angular>ng new ecommerceproject
+
+2)
+npm install -g @angular/cli
+
+
+3)ng serve
+
