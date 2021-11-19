@@ -1,0 +1,2 @@
+1)https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
+2)http://www.cs.utsa.edu/~cs3443/uml/uml.html
