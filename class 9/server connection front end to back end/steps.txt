@@ -1,0 +1,22 @@
+
+step 1.go to server folder from cmd
+
+E:\coforge2021\coforge2021\nodejsDemo\jsoncrud\server
+
+link--->https://www.npmjs.com/package/json-server
+
+step 2 
+
+Start JSON Serverjson-server --watch db.json
+
+step 3
+ to go borwser and type 
+/dept
+
+
+
+
+
+
+
+
