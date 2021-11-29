@@ -1,0 +1,578 @@
+﻿WEBVTT
+
+1
+00:00:01.380 --> 00:00:02.974
+<v Teacher>Hey in this video, we're gonna learn</v>
+
+2
+00:00:02.974 --> 00:00:06.807
+how to configure Spring with Java annotations.
+
+3
+00:00:07.820 --> 00:00:10.757
+So what exactly are Java annotations?
+
+4
+00:00:10.757 --> 00:00:13.710
+Well all they are, they're simply special labels
+
+5
+00:00:13.710 --> 00:00:16.989
+or markers that are added to Java classes
+
+6
+00:00:16.989 --> 00:00:20.271
+and they actually give you meta-data about the class.
+
+7
+00:00:20.271 --> 00:00:23.219
+So like I have here in this photo of a shoebox,
+
+8
+00:00:23.219 --> 00:00:26.990
+we have meta-data or a label on this shoebox.
+
+9
+00:00:26.990 --> 00:00:30.960
+So we have the actual size of shoe, the style of shoe,
+
+10
+00:00:30.960 --> 00:00:33.138
+the model number, and so on.
+
+11
+00:00:33.138 --> 00:00:36.008
+So that's meta-data about this shoe.
+
+12
+00:00:36.008 --> 00:00:38.207
+So, again, Java annotations are simply
+
+13
+00:00:38.207 --> 00:00:40.207
+meta-data about a class.
+
+14
+00:00:41.129 --> 00:00:43.611
+So we can actually have annotations that are processed
+
+15
+00:00:43.611 --> 00:00:45.962
+at compile time or at run-time,
+
+16
+00:00:45.962 --> 00:00:49.462
+and we'll see both examples in this video.
+
+17
+00:00:50.788 --> 00:00:53.899
+So we've actually seem some annotations already.
+
+18
+00:00:53.899 --> 00:00:56.670
+So when we created that TrackCoach,
+
+19
+00:00:56.670 --> 00:01:00.039
+we had an annotation called at override.
+
+20
+00:01:00.039 --> 00:01:02.627
+So what this annotation does is it basically tells
+
+21
+00:01:02.627 --> 00:01:06.517
+the compiler, hey, we're gonna implement a given interface,
+
+22
+00:01:06.517 --> 00:01:10.837
+or extend a class, and we're gonna override the method.
+
+23
+00:01:10.837 --> 00:01:14.160
+So when you give that annotation of at override,
+
+24
+00:01:14.160 --> 00:01:16.448
+you're basically telling the compiler,
+
+25
+00:01:16.448 --> 00:01:20.841
+hey, we're compliant, we're gonna override the method
+
+26
+00:01:20.841 --> 00:01:24.888
+exactly as listed in the interface or the parent class.
+
+27
+00:01:24.888 --> 00:01:28.365
+Now, what happens at compilation time
+
+28
+00:01:28.365 --> 00:01:31.870
+is that the compiler will check your class
+
+29
+00:01:31.870 --> 00:01:35.672
+and make sure that you really are overriding the method.
+
+30
+00:01:35.672 --> 00:01:39.839
+So they will verify or perform an audit check on your class.
+
+31
+00:01:40.957 --> 00:01:43.827
+As long as you override it exactly as advertised,
+
+32
+00:01:43.827 --> 00:01:46.759
+then everything works out just fine.
+
+33
+00:01:46.759 --> 00:01:49.293
+However, if there are any problems,
+
+34
+00:01:49.293 --> 00:01:52.065
+then the compiler will say, hey you're not really
+
+35
+00:01:52.065 --> 00:01:54.733
+overriding the method as you stated that you were,
+
+36
+00:01:54.733 --> 00:01:57.968
+and it'll actually give you a compilation error.
+
+37
+00:01:57.968 --> 00:01:58.889
+Alright?
+
+38
+00:01:58.889 --> 00:02:00.982
+So again, at override's an annotation
+
+39
+00:02:00.982 --> 00:02:04.154
+that's actually processed at compilation time,
+
+40
+00:02:04.154 --> 00:02:08.321
+and we've seen this already in our coding examples so far.
+
+41
+00:02:10.083 --> 00:02:12.093
+Alright, so now, why would you wanna use
+
+42
+00:02:12.093 --> 00:02:14.173
+spring configuration with annotations?
+
+43
+00:02:14.173 --> 00:02:17.704
+Well, if you were doing normal XML configuration,
+
+44
+00:02:17.704 --> 00:02:21.597
+it can be very verbose for very large projects.
+
+45
+00:02:21.597 --> 00:02:24.697
+Imagine a scenario where you had a spring project
+
+46
+00:02:24.697 --> 00:02:28.021
+and you had 30 beans or maybe 100 beans,
+
+47
+00:02:28.021 --> 00:02:30.539
+you'd have to list each one of those in your
+
+48
+00:02:30.539 --> 00:02:33.084
+XML config file, and that would just take a lot of time
+
+49
+00:02:33.084 --> 00:02:35.483
+and be very verbose, or a lot of work.
+
+50
+00:02:35.483 --> 00:02:37.444
+Instead what you can do is you can actually
+
+51
+00:02:37.444 --> 00:02:40.932
+configure your Spring beans with annotations.
+
+52
+00:02:40.932 --> 00:02:43.003
+So the annotations will basically
+
+53
+00:02:43.003 --> 00:02:46.643
+allow you to minimize the XML configuration.
+
+54
+00:02:46.643 --> 00:02:50.108
+Again, annotations are like meta-data for your class,
+
+55
+00:02:50.108 --> 00:02:51.431
+just like the photo here.
+
+56
+00:02:51.431 --> 00:02:54.171
+We basically have boxes or moving boxes
+
+57
+00:02:54.171 --> 00:02:56.368
+and then we annotate those boxes
+
+58
+00:02:56.368 --> 00:02:59.313
+or we basically write the name of the destination
+
+59
+00:02:59.313 --> 00:03:02.878
+of those boxes on the actual box itself.
+
+60
+00:03:02.878 --> 00:03:04.434
+So a similar thing with annotations,
+
+61
+00:03:04.434 --> 00:03:06.885
+we'll add an annotation to a given class
+
+62
+00:03:06.885 --> 00:03:11.052
+and then Spring can use that for configuring the system.
+
+63
+00:03:12.657 --> 00:03:14.606
+Alright, so let's kind of look at the background here
+
+64
+00:03:14.606 --> 00:03:15.767
+and see how this works.
+
+65
+00:03:15.767 --> 00:03:18.881
+Well basically once you add an annotation to a class,
+
+66
+00:03:18.881 --> 00:03:20.774
+then Spring will actually scan
+
+67
+00:03:20.774 --> 00:03:24.418
+your Java classes for those annotations.
+
+68
+00:03:24.418 --> 00:03:27.361
+When it finds a class that has a special
+
+69
+00:03:27.361 --> 00:03:30.689
+Spring annotation on it, it'll automatically
+
+70
+00:03:30.689 --> 00:03:34.211
+register that bean with the Spring container.
+
+71
+00:03:34.211 --> 00:03:36.899
+So instead of doing everything long hand
+
+72
+00:03:36.899 --> 00:03:40.655
+via XML config file, Spring will just scan and say,
+
+73
+00:03:40.655 --> 00:03:42.960
+oh that's a Spring bean, let me grab that bean
+
+74
+00:03:42.960 --> 00:03:45.287
+and let me register it with the Spring container.
+
+75
+00:03:45.287 --> 00:03:46.943
+So Spring will kinda help you out here
+
+76
+00:03:46.943 --> 00:03:49.706
+and do a lot of work for you in the background
+
+77
+00:03:49.706 --> 00:03:51.789
+by scanning your classes.
+
+78
+00:03:54.464 --> 00:03:55.780
+Alright, so let's go ahead and look at the
+
+79
+00:03:55.780 --> 00:03:58.958
+development process for using annotations with Spring.
+
+80
+00:03:58.958 --> 00:04:01.683
+And again, I love doing things step by step.
+
+81
+00:04:01.683 --> 00:04:04.430
+So then the first step is that we're gonna enable
+
+82
+00:04:04.430 --> 00:04:07.961
+component scanning in our Spring configuration file.
+
+83
+00:04:07.961 --> 00:04:09.910
+And then in step two, we're gonna add
+
+84
+00:04:09.910 --> 00:04:12.914
+the component annotation to our Java class.
+
+85
+00:04:12.914 --> 00:04:14.720
+And finally in step three,
+
+86
+00:04:14.720 --> 00:04:18.665
+we're gonna retrieve the bean from the Spring container.
+
+87
+00:04:18.665 --> 00:04:19.834
+And we'll go through this
+
+88
+00:04:19.834 --> 00:04:22.917
+in the following slides step by step.
+
+89
+00:04:24.126 --> 00:04:25.499
+Alright, so step one,
+
+90
+00:04:25.499 --> 00:04:27.761
+enable component scanning in the Spring config file.
+
+91
+00:04:27.761 --> 00:04:29.732
+So our Spring config file,
+
+92
+00:04:29.732 --> 00:04:31.457
+well that should be really simple now.
+
+93
+00:04:31.457 --> 00:04:33.543
+So instead of listing out all the beans, we can remove
+
+94
+00:04:33.543 --> 00:04:36.897
+all of that stuff and simply have one entry here.
+
+95
+00:04:36.897 --> 00:04:39.835
+We'll simply say, context component scan,
+
+96
+00:04:39.835 --> 00:04:42.819
+and you give it the base package that you want it to scan.
+
+97
+00:04:42.819 --> 00:04:45.521
+And so Spring will actually go through and scan all classes
+
+98
+00:04:45.521 --> 00:04:48.647
+in this package and all subpackages and it'll identify
+
+99
+00:04:48.647 --> 00:04:52.203
+the components that have that annotation on it and it'll
+
+100
+00:04:52.203 --> 00:04:55.802
+automatically register them with the Spring container.
+
+101
+00:04:55.802 --> 00:04:59.969
+That happens in the background for you automatically.
+
+102
+00:05:01.218 --> 00:05:02.690
+So then with step two, we need to add
+
+103
+00:05:02.690 --> 00:05:05.302
+the component annotation to our Java class.
+
+104
+00:05:05.302 --> 00:05:07.889
+So this is an annotation, we're gonna tell Spring,
+
+105
+00:05:07.889 --> 00:05:11.342
+hey when you scan, this class is a special Spring bean,
+
+106
+00:05:11.342 --> 00:05:12.864
+so I'd like for you to register it.
+
+107
+00:05:12.864 --> 00:05:16.195
+So here, we make use of the at component annotation.
+
+108
+00:05:16.195 --> 00:05:18.701
+And here, this is for our tennis coach,
+
+109
+00:05:18.701 --> 00:05:22.999
+and we simply give the actual bean ID that we wanted to use.
+
+110
+00:05:22.999 --> 00:05:24.939
+So at component, that Silly Coach,
+
+111
+00:05:24.939 --> 00:05:28.684
+that'll actually register this tennis coach as a Spring bean
+
+112
+00:05:28.684 --> 00:05:32.155
+and it'll have the bean ID of that Silly Coach.
+
+113
+00:05:32.155 --> 00:05:34.707
+And again, the bean ID can be anything.
+
+114
+00:05:34.707 --> 00:05:36.317
+You can make it whatever you like,
+
+115
+00:05:36.317 --> 00:05:39.820
+I'm just keeping it silly here in this example.
+
+116
+00:05:39.820 --> 00:05:40.653
+So that's it.
+
+117
+00:05:40.653 --> 00:05:41.970
+So Spring will scan,
+
+118
+00:05:41.970 --> 00:05:43.565
+it'll find this at component annotation,
+
+119
+00:05:43.565 --> 00:05:47.814
+automatically register it with that given bean ID.
+
+120
+00:05:47.814 --> 00:05:51.564
+And this is really, really cool, I like this.
+
+121
+00:05:53.653 --> 00:05:54.729
+And then finally step three,
+
+122
+00:05:54.729 --> 00:05:57.058
+retrieving the bean from the Spring container.
+
+123
+00:05:57.058 --> 00:06:01.761
+And this is nothing really new, same coding as before,
+
+124
+00:06:01.761 --> 00:06:05.147
+you simply use your Spring context, you say,
+
+125
+00:06:05.147 --> 00:06:08.542
+context dot get bean, and you simply give the bean ID.
+
+126
+00:06:08.542 --> 00:06:09.850
+So in the previous slide here
+
+127
+00:06:09.850 --> 00:06:11.583
+I had the bean ID of that Silly Coach.
+
+128
+00:06:11.583 --> 00:06:12.995
+You simply give that bean ID
+
+129
+00:06:12.995 --> 00:06:17.070
+and it'll return back a coach implementation.
+
+130
+00:06:17.070 --> 00:06:19.930
+And that's it really, that's pretty much all you have to do.
+
+131
+00:06:19.930 --> 00:06:21.728
+So the key here is that you didn't have to list out
+
+132
+00:06:21.728 --> 00:06:25.111
+all of the beans in the Spring config file.
+
+133
+00:06:25.111 --> 00:06:26.975
+All you had to do was simply add the appropriate
+
+134
+00:06:26.975 --> 00:06:29.706
+component annotation to your Spring beans
+
+135
+00:06:29.706 --> 00:06:31.622
+and they're automatically registered
+
+136
+00:06:31.622 --> 00:06:33.636
+thanks to that component scanning
+
+137
+00:06:33.636 --> 00:06:36.561
+and thanks to Java annotations.
+
+138
+00:06:36.561 --> 00:06:38.004
+So this is good stuff here.
+
+139
+00:06:38.004 --> 00:06:40.511
+Now in the following videos we're gonna move into eclipse,
+
+140
+00:06:40.511 --> 00:06:42.022
+we're gonna get our hands dirty,
+
+141
+00:06:42.022 --> 00:06:44.957
+and we'll set up a project, we'll start writing code,
+
+142
+00:06:44.957 --> 00:06:47.376
+and we'll do all of this from scratch,
+
+143
+00:06:47.376 --> 00:06:49.909
+and we'll do it all step by step.
+
+144
+00:06:49.909 --> 00:06:52.326
+So see you in the next video.
+

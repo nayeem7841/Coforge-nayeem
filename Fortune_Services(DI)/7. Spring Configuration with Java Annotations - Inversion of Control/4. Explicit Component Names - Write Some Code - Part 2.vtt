@@ -1,0 +1,738 @@
+﻿WEBVTT
+
+1
+00:00:01.522 --> 00:00:03.127
+<v Instructor>Alright, so we're making good progress here.</v>
+
+2
+00:00:03.127 --> 00:00:05.131
+Let's take a look at our next two steps.
+
+3
+00:00:05.131 --> 00:00:07.524
+So in step two we're gonna add the component annotation
+
+4
+00:00:07.524 --> 00:00:09.042
+to our Java class.
+
+5
+00:00:09.042 --> 00:00:11.489
+In step three we'll retrieve the bean
+
+6
+00:00:11.489 --> 00:00:12.993
+from the Spring container.
+
+7
+00:00:12.993 --> 00:00:14.089
+So a lot of good stuff here.
+
+8
+00:00:14.089 --> 00:00:16.256
+Let's go ahead and dig in.
+
+9
+00:00:17.975 --> 00:00:19.634
+Alright, so what I wanna do is actually create
+
+10
+00:00:19.634 --> 00:00:21.545
+our coach interface.
+
+11
+00:00:21.545 --> 00:00:22.978
+So I'll just simply do a right click,
+
+12
+00:00:22.978 --> 00:00:24.978
+I'll say New, Interface,
+
+13
+00:00:26.045 --> 00:00:29.247
+and I'll give the interface name of Coach.
+
+14
+00:00:29.247 --> 00:00:33.414
+I'll keep all the other defaults, and I'll hit Finish.
+
+15
+00:00:35.125 --> 00:00:37.038
+And we've already seen the coach interface before
+
+16
+00:00:37.038 --> 00:00:38.036
+in previous videos,
+
+17
+00:00:38.036 --> 00:00:39.753
+and I'll just kinda write it here again from scratch,
+
+18
+00:00:39.753 --> 00:00:41.658
+just to kinda keep things simple
+
+19
+00:00:41.658 --> 00:00:43.419
+and keep things on track.
+
+20
+00:00:43.419 --> 00:00:46.132
+So this coach interface will have one simple method
+
+21
+00:00:46.132 --> 00:00:47.397
+just starting out.
+
+22
+00:00:47.397 --> 00:00:49.730
+It's called getDailyWorkout.
+
+23
+00:00:52.474 --> 00:00:54.603
+So the getDailyWorkout method returns a string,
+
+24
+00:00:54.603 --> 00:00:56.097
+and it's a public method, and that's it.
+
+25
+00:00:56.097 --> 00:00:57.100
+Again, just very simple.
+
+26
+00:00:57.100 --> 00:00:58.325
+This is the coach interface,
+
+27
+00:00:58.325 --> 00:00:59.940
+and then we'll have different implementations
+
+28
+00:00:59.940 --> 00:01:03.289
+that'll actually implement this given interface.
+
+29
+00:01:03.289 --> 00:01:07.332
+But this is enough to kinda get us started for right now.
+
+30
+00:01:07.332 --> 00:01:08.331
+Alrighty, so now let's go ahead
+
+31
+00:01:08.331 --> 00:01:10.691
+and create an actual Java class.
+
+32
+00:01:10.691 --> 00:01:12.939
+And we're gonna add an annotation to that class.
+
+33
+00:01:12.939 --> 00:01:16.311
+So again, I'll right click on our package name,
+
+34
+00:01:16.311 --> 00:01:20.311
+Spring Demo, I'll say New and I'll choose Class.
+
+35
+00:01:22.208 --> 00:01:23.765
+And so here we're gonna mix it up a little bit.
+
+36
+00:01:23.765 --> 00:01:25.972
+We're gonna create a tennis coach,
+
+37
+00:01:25.972 --> 00:01:30.783
+so that's the actual name of the class: TennisCoach.
+
+38
+00:01:30.783 --> 00:01:31.616
+And then what I'd like to do
+
+39
+00:01:31.616 --> 00:01:33.699
+is move down to the interfaces section
+
+40
+00:01:33.699 --> 00:01:35.943
+and I like to click on the Add button here
+
+41
+00:01:35.943 --> 00:01:40.214
+because we want to add an interface for this tennis coach.
+
+42
+00:01:40.214 --> 00:01:42.704
+And the actual interface we're gonna choose is coach,
+
+43
+00:01:42.704 --> 00:01:44.314
+so just type in coach up top,
+
+44
+00:01:44.314 --> 00:01:45.498
+they'll give you that link,
+
+45
+00:01:45.498 --> 00:01:48.059
+and then there we go, matching items.
+
+46
+00:01:48.059 --> 00:01:50.476
+And then go ahead and hit OK.
+
+47
+00:01:53.596 --> 00:01:55.671
+Great, so in Interfaces section you should see
+
+48
+00:01:55.671 --> 00:01:57.456
+the coach interface listed.
+
+49
+00:01:57.456 --> 00:02:02.054
+Let's keep all the other defaults, and then hit Finish.
+
+50
+00:02:02.054 --> 00:02:03.054
+Okay, this is great.
+
+51
+00:02:03.054 --> 00:02:04.248
+So this is what our coach should look like right now
+
+52
+00:02:04.248 --> 00:02:05.963
+for our tennis coach.
+
+53
+00:02:05.963 --> 00:02:08.061
+Let's go ahead and give ourselves
+
+54
+00:02:08.061 --> 00:02:09.196
+a basic implementation here
+
+55
+00:02:09.196 --> 00:02:12.779
+for a tennis coach for their daily workout.
+
+56
+00:02:14.816 --> 00:02:16.674
+Let's just kind of dream up something.
+
+57
+00:02:16.674 --> 00:02:19.653
+Practice your backhand volley.
+
+58
+00:02:19.653 --> 00:02:20.774
+Yeah, that sounds about right.
+
+59
+00:02:20.774 --> 00:02:21.772
+(chuckles)
+
+60
+00:02:21.772 --> 00:02:23.273
+Alright, so that's the implementation here
+
+61
+00:02:23.273 --> 00:02:24.295
+for our tennis coach.
+
+62
+00:02:24.295 --> 00:02:25.602
+So these are the daily workouts
+
+63
+00:02:25.602 --> 00:02:28.596
+that the tennis coach will provide when we ask him
+
+64
+00:02:28.596 --> 00:02:31.546
+as far as, hey coach, what do we need to do today?
+
+65
+00:02:31.546 --> 00:02:33.854
+Practice your backhand volley.
+
+66
+00:02:33.854 --> 00:02:34.852
+Okay, great.
+
+67
+00:02:34.852 --> 00:02:36.007
+So now the next thing we need to do
+
+68
+00:02:36.007 --> 00:02:38.494
+is add the annotation here.
+
+69
+00:02:38.494 --> 00:02:41.997
+So we need to add that @Component annotation.
+
+70
+00:02:41.997 --> 00:02:44.410
+So again, this is a special annotation that Spring will use
+
+71
+00:02:44.410 --> 00:02:46.365
+when they scan our classes,
+
+72
+00:02:46.365 --> 00:02:50.532
+and then I'll give the actual bean ID of thatSillyCoach.
+
+73
+00:02:52.485 --> 00:02:54.233
+So kind of hover over the @Component
+
+74
+00:02:54.233 --> 00:02:57.523
+so we can fix the imports here.
+
+75
+00:02:57.523 --> 00:03:01.690
+So I just select the option therefore of Import Component.
+
+76
+00:03:07.022 --> 00:03:09.470
+And on line three we should have
+
+77
+00:03:09.470 --> 00:03:12.224
+org.springframework.stereotype.Component.
+
+78
+00:03:12.224 --> 00:03:13.226
+Great, this is good.
+
+79
+00:03:13.226 --> 00:03:17.143
+So that's the correct import that we need here.
+
+80
+00:03:19.799 --> 00:03:22.450
+So again, when Spring scans this package,
+
+81
+00:03:22.450 --> 00:03:24.455
+they're gonna find this class, @Component,
+
+82
+00:03:24.455 --> 00:03:26.656
+they're gonna automatically register this bean
+
+83
+00:03:26.656 --> 00:03:27.724
+with the Spring container,
+
+84
+00:03:27.724 --> 00:03:30.888
+and they'll use the bean ID of thatSillyCoach
+
+85
+00:03:30.888 --> 00:03:32.821
+so at a later time we can retrieve that bean
+
+86
+00:03:32.821 --> 00:03:34.266
+from the Spring container
+
+87
+00:03:34.266 --> 00:03:37.266
+using the bean ID of thatSillyCoach.
+
+88
+00:03:39.907 --> 00:03:41.610
+Alright, so we're making some really good progress here.
+
+89
+00:03:41.610 --> 00:03:43.621
+So with step three, we need to write the code
+
+90
+00:03:43.621 --> 00:03:45.545
+to retrieve the bean from the container.
+
+91
+00:03:45.545 --> 00:03:49.712
+So I'll actually create another Java class for this.
+
+92
+00:03:51.562 --> 00:03:55.229
+I'll choose right click, I'll say New Class.
+
+93
+00:03:56.659 --> 00:04:00.826
+And the name for this class, I'll call it AnnotationDemoApp.
+
+94
+00:04:01.954 --> 00:04:05.010
+And this is just a main driver program.
+
+95
+00:04:05.010 --> 00:04:06.349
+It'll actually have a main method,
+
+96
+00:04:06.349 --> 00:04:10.516
+so I'll select the option here at the bottom for main,
+
+97
+00:04:12.303 --> 00:04:14.474
+and I'll keep all the other defaults here,
+
+98
+00:04:14.474 --> 00:04:16.557
+and then I'll hit Finish.
+
+99
+00:04:18.292 --> 00:04:21.258
+Okay, good, so just a very...
+
+100
+00:04:21.258 --> 00:04:22.821
+Simple application here.
+
+101
+00:04:22.821 --> 00:04:25.229
+Let me go ahead and clean up those auto-generated comments,
+
+102
+00:04:25.229 --> 00:04:26.756
+and let me write in my own comments
+
+103
+00:04:26.756 --> 00:04:28.758
+as far as the things that I wanna do
+
+104
+00:04:28.758 --> 00:04:30.758
+inside of this demo app.
+
+105
+00:04:34.637 --> 00:04:35.659
+So the first thing I'm gonna do
+
+106
+00:04:35.659 --> 00:04:37.530
+is read the Spring config file,
+
+107
+00:04:37.530 --> 00:04:41.246
+then I'll get the bean from the Spring container,
+
+108
+00:04:41.246 --> 00:04:43.894
+I'll call some methods on the bean,
+
+109
+00:04:43.894 --> 00:04:46.922
+and then finally, I'll close the container.
+
+110
+00:04:46.922 --> 00:04:48.368
+And again, this is nothing really new.
+
+111
+00:04:48.368 --> 00:04:51.763
+We've actually gone through this process many times before,
+
+112
+00:04:51.763 --> 00:04:52.838
+and we'll do a similar thing here
+
+113
+00:04:52.838 --> 00:04:56.338
+with the Spring annotation configurations.
+
+114
+00:04:57.726 --> 00:05:00.000
+Alright, so let's go ahead and start writing some code here.
+
+115
+00:05:00.000 --> 00:05:01.579
+So again, reading the Spring config file,
+
+116
+00:05:01.579 --> 00:05:03.704
+just like we've already done.
+
+117
+00:05:03.704 --> 00:05:05.118
+Give myself some white space at the bottom.
+
+118
+00:05:05.118 --> 00:05:06.109
+So here I'll just make use
+
+119
+00:05:06.109 --> 00:05:09.359
+of that ClassPathXMLApplicationContext.
+
+120
+00:05:12.709 --> 00:05:14.164
+Context equals new.
+
+121
+00:05:14.164 --> 00:05:16.306
+And again, I like to copy paste that name.
+
+122
+00:05:16.306 --> 00:05:19.051
+So I just copy that name and paste it.
+
+123
+00:05:19.051 --> 00:05:20.251
+I use the keyboard there.
+
+124
+00:05:20.251 --> 00:05:21.955
+And then I give the actual name of the config file,
+
+125
+00:05:21.955 --> 00:05:24.348
+so applicationContext.xml, and that's it.
+
+126
+00:05:24.348 --> 00:05:27.407
+And again, remember, our XML file is really simple.
+
+127
+00:05:27.407 --> 00:05:28.643
+There's not much in there.
+
+128
+00:05:28.643 --> 00:05:32.495
+It simply tells Spring to scan for beans.
+
+129
+00:05:32.495 --> 00:05:35.662
+I'll go ahead and fix my imports here.
+
+130
+00:05:36.524 --> 00:05:39.176
+Goes on line three, we should have the correct import.
+
+131
+00:05:39.176 --> 00:05:40.759
+So that looks good.
+
+132
+00:05:42.686 --> 00:05:43.767
+Get the bean from the container.
+
+133
+00:05:43.767 --> 00:05:46.850
+And again, we simply use the bean ID.
+
+134
+00:05:48.070 --> 00:05:50.535
+So let me just take a quick peek.
+
+135
+00:05:50.535 --> 00:05:53.939
+So in TennisCoach, the bean ID is thatSillyCoach.
+
+136
+00:05:53.939 --> 00:05:55.865
+ThatSillyCoach!
+
+137
+00:05:55.865 --> 00:05:56.698
+So I just copy it
+
+138
+00:05:56.698 --> 00:05:58.953
+just so I have it in my little buffer here.
+
+139
+00:05:58.953 --> 00:06:02.182
+And now I'll just go through and read the bean.
+
+140
+00:06:02.182 --> 00:06:03.437
+So Coach, the Coach equals,
+
+141
+00:06:03.437 --> 00:06:05.854
+and I'll say context.getBean,
+
+142
+00:06:07.110 --> 00:06:08.614
+and I'll just do a little paste here
+
+143
+00:06:08.614 --> 00:06:11.185
+of the actual bean ID,
+
+144
+00:06:11.185 --> 00:06:12.696
+what I just copied.
+
+145
+00:06:12.696 --> 00:06:14.065
+So I'll just do a paste.
+
+146
+00:06:14.065 --> 00:06:16.315
+And then comma Coach.class.
+
+147
+00:06:17.185 --> 00:06:19.901
+So again, remember, when you have that @Component
+
+148
+00:06:19.901 --> 00:06:21.169
+on the actual tennis coach,
+
+149
+00:06:21.169 --> 00:06:23.812
+you simply use whatever bean ID they provided,
+
+150
+00:06:23.812 --> 00:06:25.547
+and that's what you do to retrieve it, and that's it.
+
+151
+00:06:25.547 --> 00:06:26.535
+Very simple.
+
+152
+00:06:26.535 --> 00:06:28.226
+So this is all good stuff.
+
+153
+00:06:28.226 --> 00:06:30.274
+Everything that we're gonna do from the remaining here
+
+154
+00:06:30.274 --> 00:06:31.797
+is what you've seen already.
+
+155
+00:06:31.797 --> 00:06:32.957
+So there's nothing really new.
+
+156
+00:06:32.957 --> 00:06:35.340
+So simply call the method on the bean.
+
+157
+00:06:35.340 --> 00:06:38.470
+TheCoach.getDailyWorkout, which is all good.
+
+158
+00:06:38.470 --> 00:06:40.545
+And then I simply close off the context
+
+159
+00:06:40.545 --> 00:06:42.628
+by doing a context.close.
+
+160
+00:06:47.968 --> 00:06:49.765
+Alright, so that's really all the work for step three
+
+161
+00:06:49.765 --> 00:06:52.760
+of retrieving the bean from the container.
+
+162
+00:06:52.760 --> 00:06:55.109
+We just went through and read the config file,
+
+163
+00:06:55.109 --> 00:06:59.061
+got the bean, called a method on the bean,
+
+164
+00:06:59.061 --> 00:07:00.621
+and then finally closed the context.
+
+165
+00:07:00.621 --> 00:07:02.462
+So this looks really good, so let's go ahead and save this
+
+166
+00:07:02.462 --> 00:07:06.499
+and let's go ahead and run this application.
+
+167
+00:07:06.499 --> 00:07:10.666
+I'll just do a right click, Run As, Java Application.
+
+168
+00:07:12.407 --> 00:07:15.567
+And then voila, there's our output!
+
+169
+00:07:15.567 --> 00:07:18.222
+So it goes through, it says loading bean configurations
+
+170
+00:07:18.222 --> 00:07:20.592
+from that applicationContext.xml.
+
+171
+00:07:20.592 --> 00:07:22.621
+So this guy goes through and scans everything.
+
+172
+00:07:22.621 --> 00:07:24.144
+It registers those beans,
+
+173
+00:07:24.144 --> 00:07:25.820
+and then we simply call a method on it,
+
+174
+00:07:25.820 --> 00:07:29.783
+print out our daily workout, practice your backhand volley,
+
+175
+00:07:29.783 --> 00:07:31.668
+and we close it and that's it.
+
+176
+00:07:31.668 --> 00:07:32.501
+There you go.
+
+177
+00:07:32.501 --> 00:07:36.426
+So you've used Spring annotations in a Java application
+
+178
+00:07:36.426 --> 00:07:38.466
+so you can kinda check that off your list.
+
+179
+00:07:38.466 --> 00:07:40.450
+We're actually gonna go in detail
+
+180
+00:07:40.450 --> 00:07:42.304
+and cover some more aspects of this,
+
+181
+00:07:42.304 --> 00:07:44.905
+but you've kind of covered the basics so far.
+
+182
+00:07:44.905 --> 00:07:46.112
+So I'd say, good job!
+
+183
+00:07:46.112 --> 00:07:47.222
+Congratulations!
+
+184
+00:07:47.222 --> 00:07:48.055
+Yoo-hoo!
+

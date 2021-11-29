@@ -1,0 +1,290 @@
+﻿WEBVTT
+
+1
+00:00:01.284 --> 00:00:02.314
+<v Instructor>Alrighty, so let's go ahead</v>
+
+2
+00:00:02.314 --> 00:00:03.579
+and move into Eclipse.
+
+3
+00:00:03.579 --> 00:00:05.049
+And what I'd like to do in this video,
+
+4
+00:00:05.049 --> 00:00:07.217
+is that we're actually gonna set up a new project,
+
+5
+00:00:07.217 --> 00:00:09.117
+and copy over our Spring JARs.
+
+6
+00:00:09.117 --> 00:00:11.068
+I like to keep things separate,
+
+7
+00:00:11.068 --> 00:00:13.859
+just so we're not putting everything into one project.
+
+8
+00:00:13.859 --> 00:00:15.143
+Also, it's a good practice,
+
+9
+00:00:15.143 --> 00:00:17.409
+to set up a couple of projects also.
+
+10
+00:00:17.409 --> 00:00:21.167
+Just so you can kind of remember everything.
+
+11
+00:00:21.167 --> 00:00:22.866
+So the first thing I'm gonna do here
+
+12
+00:00:22.866 --> 00:00:25.853
+is we're actually gonna go through and create a new project.
+
+13
+00:00:25.853 --> 00:00:28.005
+So I'll go to File, New.
+
+14
+00:00:28.005 --> 00:00:30.422
+And I'll select Java Project.
+
+15
+00:00:32.324 --> 00:00:34.094
+And then for the project name
+
+16
+00:00:34.094 --> 00:00:36.844
+I'll say spring-demo-annotations.
+
+17
+00:00:41.171 --> 00:00:43.395
+And I'll keep all the other defaults here,
+
+18
+00:00:43.395 --> 00:00:47.308
+and I'll go ahead and click on the Finish button.
+
+19
+00:00:47.308 --> 00:00:49.272
+Okay, great so we have this new project up top
+
+20
+00:00:49.272 --> 00:00:50.655
+called spring-demo-annotations.
+
+21
+00:00:50.655 --> 00:00:52.405
+It's empty right now.
+
+22
+00:00:54.008 --> 00:00:56.262
+What I like to do is copy over the Spring JARs.
+
+23
+00:00:56.262 --> 00:00:58.509
+And so I'll actually use that previous project
+
+24
+00:00:58.509 --> 00:01:00.759
+that we already had set up.
+
+25
+00:01:01.964 --> 00:01:03.682
+So the project of spring-demo-one
+
+26
+00:01:03.682 --> 00:01:06.541
+that's the one that we've used in our previous videos.
+
+27
+00:01:06.541 --> 00:01:08.940
+I actually wanna copy the lib directory
+
+28
+00:01:08.940 --> 00:01:10.690
+from spring-demo-one.
+
+29
+00:01:11.739 --> 00:01:15.906
+And I simply just do a right-click and choose Copy.
+
+30
+00:01:18.881 --> 00:01:21.209
+And then I'll move up to spring-demo-annotations
+
+31
+00:01:21.209 --> 00:01:23.445
+that's the new project that we just created.
+
+32
+00:01:23.445 --> 00:01:25.471
+And I'll paste those files there.
+
+33
+00:01:25.471 --> 00:01:28.971
+So I'll do a right-click and choose Paste.
+
+34
+00:01:31.391 --> 00:01:33.698
+Okay great so now we've pasted this
+
+35
+00:01:33.698 --> 00:01:36.135
+new directory over there lib
+
+36
+00:01:36.135 --> 00:01:39.117
+and this is part of our spring-demo-annotations.
+
+37
+00:01:39.117 --> 00:01:40.971
+This is great but we need to do one more thing.
+
+38
+00:01:40.971 --> 00:01:42.829
+We actually need to add these JAR files
+
+39
+00:01:42.829 --> 00:01:45.011
+to our project class path.
+
+40
+00:01:45.011 --> 00:01:47.328
+So we'll go ahead and select the project up top
+
+41
+00:01:47.328 --> 00:01:49.026
+spring-demo-annotations.
+
+42
+00:01:49.026 --> 00:01:53.040
+And I'll right-click and choose Properties.
+
+43
+00:01:53.040 --> 00:01:54.290
+Because I actually need to setup
+
+44
+00:01:54.290 --> 00:01:56.623
+my Build Path at this point.
+
+45
+00:02:00.650 --> 00:02:03.150
+And over on the left hand side
+
+46
+00:02:05.577 --> 00:02:08.075
+let's choose Java Build Path.
+
+47
+00:02:08.075 --> 00:02:11.742
+Then in the center we'll click on Libraries.
+
+48
+00:02:12.707 --> 00:02:16.874
+And then we'll move over and then we'll choose Add JARs.
+
+49
+00:02:18.145 --> 00:02:21.744
+And let's expand the folder here for spring-demo-annotations
+
+50
+00:02:21.744 --> 00:02:24.444
+that's the new project that we just created.
+
+51
+00:02:24.444 --> 00:02:27.444
+And we'll expand that lib directory.
+
+52
+00:02:28.741 --> 00:02:30.088
+And so I'll just go through in that lib directory
+
+53
+00:02:30.088 --> 00:02:32.328
+I'll select all of those JAR files.
+
+54
+00:02:32.328 --> 00:02:35.748
+Just do a shift click on all of those JAR files.
+
+55
+00:02:35.748 --> 00:02:37.331
+Big long list here.
+
+56
+00:02:40.396 --> 00:02:42.397
+And once you have all those JAR files selected
+
+57
+00:02:42.397 --> 00:02:45.761
+go ahead and click on the OK button.
+
+58
+00:02:45.761 --> 00:02:48.012
+And now there should be listed here in the center.
+
+59
+00:02:48.012 --> 00:02:49.272
+AOK.
+
+60
+00:02:49.272 --> 00:02:53.439
+And then again in the bottom right click on the OK button.
+
+61
+00:02:55.333 --> 00:02:56.332
+Okay great.
+
+62
+00:02:56.332 --> 00:02:58.968
+So it does all the setting up, all the scanning and so on.
+
+63
+00:02:58.968 --> 00:03:00.933
+So now we should have this newer item here called
+
+64
+00:03:00.933 --> 00:03:04.300
+Reference Libraries which is basically all those JAR files
+
+65
+00:03:04.300 --> 00:03:06.374
+but now they're actually on our project class path.
+
+66
+00:03:06.374 --> 00:03:09.920
+Once you have this in place then you're good to go.
+
+67
+00:03:09.920 --> 00:03:11.785
+Now in the following videos we'll go ahead
+
+68
+00:03:11.785 --> 00:03:13.578
+and we'll actually start writing code.
+
+69
+00:03:13.578 --> 00:03:16.369
+But I at least want to get a new project setup from scratch
+
+70
+00:03:16.369 --> 00:03:19.766
+just to help us out with our future development.
+
+71
+00:03:19.766 --> 00:03:21.636
+Okay so this is good stuff so far.
+
+72
+00:03:21.636 --> 00:03:24.219
+I'll see you in the next video.
+

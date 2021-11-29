@@ -1,0 +1,350 @@
+﻿WEBVTT
+
+1
+00:00:00.662 --> 00:00:02.891
+<v Instructor>All righty, so let's go ahead and move in</v>
+
+2
+00:00:02.891 --> 00:00:04.963
+and let's walk through this development process.
+
+3
+00:00:04.963 --> 00:00:06.930
+So the first step is that we're actually gonna
+
+4
+00:00:06.930 --> 00:00:11.097
+enable component scanning in our Spring configuration file.
+
+5
+00:00:14.215 --> 00:00:16.272
+All right, so moving into our Eclipse project
+
+6
+00:00:16.272 --> 00:00:19.028
+that we just created, that spring-demo-annotation,
+
+7
+00:00:19.028 --> 00:00:22.860 line:15% 
+what I wanna do is actually copy over the config file
+
+8
+00:00:22.860 --> 00:00:25.027 line:15% 
+from our previous project.
+
+9
+00:00:26.334 --> 00:00:29.023 line:15% 
+So what I wanna do is actually move into my
+
+10
+00:00:29.023 --> 00:00:32.278 line:15% 
+spring-demo-one project, and I'm actually gonna copy
+
+11
+00:00:32.278 --> 00:00:35.718 line:15% 
+the applicationContext.xml and I'll move it to my new one.
+
+12
+00:00:35.718 --> 00:00:39.388 line:15% 
+So in spring-demo-one, selection applicationContext.xml,
+
+13
+00:00:39.388 --> 00:00:42.138 line:15% 
+do a right-click and choose Copy.
+
+14
+00:00:44.653 --> 00:00:47.394 line:15% 
+And now let's move back to our spring-demo-annotation,
+
+15
+00:00:47.394 --> 00:00:48.662 line:15% 
+that's the one that we just created,
+
+16
+00:00:48.662 --> 00:00:51.972 line:15% 
+and let's simply move to the source directory,
+
+17
+00:00:51.972 --> 00:00:55.500 line:15% 
+and then we do a right-click and choose Paste.
+
+18
+00:00:55.500 --> 00:00:56.333 line:15% 
+And it's important that you paste it
+
+19
+00:00:56.333 --> 00:00:58.408 line:15% 
+into the source directory.
+
+20
+00:00:58.408 --> 00:01:01.075 line:15% 
+So right-click and choose Paste.
+
+21
+00:01:02.907 --> 00:01:04.518
+Okay, great, now if we expand the source directory
+
+22
+00:01:04.518 --> 00:01:06.864
+for spring-demo-annotations, we should see this new
+
+23
+00:01:06.864 --> 00:01:10.905
+config file here, applicationContext.xml.
+
+24
+00:01:10.905 --> 00:01:12.800
+Let's go ahead and open this file up for a second
+
+25
+00:01:12.800 --> 00:01:15.550
+and just take a quick look at it.
+
+26
+00:01:17.501 --> 00:01:19.642
+I'll just expand the window here.
+
+27
+00:01:19.642 --> 00:01:22.327
+Now, what I actually wanna do is clean out this file,
+
+28
+00:01:22.327 --> 00:01:24.930 line:15% 
+so I wanna remove all the bean entries in this file,
+
+29
+00:01:24.930 --> 00:01:26.607 line:15% 
+so simply highlight everything there
+
+30
+00:01:26.607 --> 00:01:28.016 line:15% 
+for all the bean entries,
+
+31
+00:01:28.016 --> 00:01:31.349 line:15% 
+I'll do a right-click and choose Delete.
+
+32
+00:01:32.639 --> 00:01:34.773
+So at this point we should have everything deleted
+
+33
+00:01:34.773 --> 00:01:36.844
+from this file, we should only have what I have here,
+
+34
+00:01:36.844 --> 00:01:38.566
+on the screen, so kinda use this as a checkpoint
+
+35
+00:01:38.566 --> 00:01:41.816
+to make sure your file looks like mine.
+
+36
+00:01:44.480 --> 00:01:45.989
+All right, and also I like to clean up,
+
+37
+00:01:45.989 --> 00:01:48.928
+so let's go ahead and close that previous project we had,
+
+38
+00:01:48.928 --> 00:01:50.827
+spring-demo-one, that's the old one,
+
+39
+00:01:50.827 --> 00:01:53.216
+so let's just simply do a right-click and choose Close
+
+40
+00:01:53.216 --> 00:01:54.549
+on that project.
+
+41
+00:02:00.365 --> 00:02:02.204
+Because I like to kinda keep things simple,
+
+42
+00:02:02.204 --> 00:02:03.961
+make sure I only have one project at a time,
+
+43
+00:02:03.961 --> 00:02:06.192 line:15% 
+make sure I'm only editing a given file at a time,
+
+44
+00:02:06.192 --> 00:02:09.149 line:15% 
+because you get mixed up with too much stuff.
+
+45
+00:02:09.149 --> 00:02:12.043 line:15% 
+So step one is that we're gonna enable component scanning
+
+46
+00:02:12.043 --> 00:02:13.611 line:15% 
+in our Spring config file.
+
+47
+00:02:13.611 --> 00:02:16.219 line:15% 
+So let's go into our applicationContext.xml,
+
+48
+00:02:16.219 --> 00:02:17.726
+let's move down to line 10,
+
+49
+00:02:17.726 --> 00:02:20.535
+and I'll add a quick little comment here,
+
+50
+00:02:20.535 --> 00:02:22.394
+just to kinda keep myself on track.
+
+51
+00:02:22.394 --> 00:02:26.561
+So I'm gonna add an entry to enable component scanning.
+
+52
+00:02:30.389 --> 00:02:33.109
+And then I'll actually add the code here on line 12,
+
+53
+00:02:33.109 --> 00:02:37.625
+so I'll say context: and I'll choose component-scan,
+
+54
+00:02:37.625 --> 00:02:42.624
+that's the same thing we saw on the slides earlier,
+
+55
+00:02:42.624 --> 00:02:44.619
+and then I'll give the actual base package name,
+
+56
+00:02:44.619 --> 00:02:47.950
+so I'll call it com.Luv2code.springdemo.
+
+57
+00:02:47.950 --> 00:02:49.813
+And I'll just put a slash here at the end,
+
+58
+00:02:49.813 --> 00:02:51.692
+just to get that taken care of.
+
+59
+00:02:51.692 --> 00:02:52.775
+So that's it really.
+
+60
+00:02:52.775 --> 00:02:55.121
+So context:component-scan, we give the base package
+
+61
+00:02:55.121 --> 00:02:56.957
+and we give the actual name of our package
+
+62
+00:02:56.957 --> 00:02:59.322
+of where we're gonna place code.
+
+63
+00:02:59.322 --> 00:03:01.308
+And so again, Spring will do all the scanning,
+
+64
+00:03:01.308 --> 00:03:02.769
+look for those annotations,
+
+65
+00:03:02.769 --> 00:03:06.815
+and then register those beans automatically.
+
+66
+00:03:06.815 --> 00:03:08.943 line:15% 
+All right, now while I'm here let's go ahead and create
+
+67
+00:03:08.943 --> 00:03:11.582 line:15% 
+the package since we remember the package name,
+
+68
+00:03:11.582 --> 00:03:13.386 line:15% 
+let's go ahead and create it real quick.
+
+69
+00:03:13.386 --> 00:03:14.747 line:15% 
+So in our source directory,
+
+70
+00:03:14.747 --> 00:03:17.948 line:15% 
+let's simply do a right-click, choose New,
+
+71
+00:03:17.948 --> 00:03:20.448 line:15% 
+and then we'll choose Package.
+
+72
+00:03:22.244 --> 00:03:24.037
+And I'll give the actual package name,
+
+73
+00:03:24.037 --> 00:03:27.706
+it's com.Luv2code.springdemo, you have to make sure
+
+74
+00:03:27.706 --> 00:03:30.106
+it's the exact same package name that you reference
+
+75
+00:03:30.106 --> 00:03:32.564
+in the Spring config file, 'cause this is where
+
+76
+00:03:32.564 --> 00:03:36.397
+Spring's gonna scan, looking for Spring beans.
+
+77
+00:03:37.326 --> 00:03:39.178
+So I'll hit Finish, and there we go,
+
+78
+00:03:39.178 --> 00:03:41.837
+we have this new package, com.Luv2code.springdemo,
+
+79
+00:03:41.837 --> 00:03:44.186
+I'll just look at my config file and make sure
+
+80
+00:03:44.186 --> 00:03:46.910
+those two names are the same.
+
+81
+00:03:46.910 --> 00:03:47.956
+So this looks good.
+
+82
+00:03:47.956 --> 00:03:50.345
+So we have step one completed so far,
+
+83
+00:03:50.345 --> 00:03:52.259
+so we have the component scanning in place.
+
+84
+00:03:52.259 --> 00:03:54.612
+In the following video we'll actually start writing code,
+
+85
+00:03:54.612 --> 00:03:56.985
+and we'll follow those two additional steps
+
+86
+00:03:56.985 --> 00:03:59.547
+required for this configuration process.
+
+87
+00:03:59.547 --> 00:04:01.630
+So I'll see you in a bit.
+

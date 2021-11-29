@@ -1,0 +1,478 @@
+﻿WEBVTT
+
+1
+00:00:01.541 --> 00:00:02.552
+<v Instructor>Alrighty, so let's go ahead</v>
+
+2
+00:00:02.552 --> 00:00:04.779
+and move into Eclipse, and what we're going to do
+
+3
+00:00:04.779 --> 00:00:06.275
+is actually go through the demo
+
+4
+00:00:06.275 --> 00:00:09.816
+of using default bean ids with Spring,
+
+5
+00:00:09.816 --> 00:00:11.583
+and what I'd like to do is continue
+
+6
+00:00:11.583 --> 00:00:13.198
+to use an existing project,
+
+7
+00:00:13.198 --> 00:00:14.439
+and we're going to make some modifications
+
+8
+00:00:14.439 --> 00:00:16.166
+to our TennisCoach,
+
+9
+00:00:16.166 --> 00:00:19.015
+and what we're going to do actually with this TennisCoach
+
+10
+00:00:19.015 --> 00:00:20.763
+is that we're actually going to remove
+
+11
+00:00:20.763 --> 00:00:24.236
+the explicit bean id from that class,
+
+12
+00:00:24.236 --> 00:00:26.886
+so right now on line five I give the explicit bean id
+
+13
+00:00:26.886 --> 00:00:29.983
+of thatSillyCoach, and what I want to do
+
+14
+00:00:29.983 --> 00:00:31.816
+is actually remove it.
+
+15
+00:00:32.958 --> 00:00:36.789
+We want to have Spring linkings of the default bean id,
+
+16
+00:00:36.789 --> 00:00:39.841
+so I'll just simply highlight this whole section here
+
+17
+00:00:39.841 --> 00:00:42.616
+of that explicit bean id, and I'll just hit the delete key
+
+18
+00:00:42.616 --> 00:00:45.763
+to actually remove this from my TennisCoach,
+
+19
+00:00:45.763 --> 00:00:47.930
+from my TennisCoach class.
+
+20
+00:00:49.269 --> 00:00:51.894
+Alright so there we go, so now just add component.
+
+21
+00:00:51.894 --> 00:00:54.446
+Note here that this will now use the default bean id
+
+22
+00:00:54.446 --> 00:00:56.666
+because we didn't explicitly give one,
+
+23
+00:00:56.666 --> 00:00:58.162
+and remember the default bean id
+
+24
+00:00:58.162 --> 00:00:59.962
+is the same name as the class except
+
+25
+00:00:59.962 --> 00:01:03.212
+that the first character is lower case.
+
+26
+00:01:04.804 --> 00:01:07.753
+Alright, so now let's go ahead and move
+
+27
+00:01:07.753 --> 00:01:09.634
+into our actual application because we'll need
+
+28
+00:01:09.634 --> 00:01:10.932
+to make some changes to our app
+
+29
+00:01:10.932 --> 00:01:13.849
+when we actually retrieve the bean.
+
+30
+00:01:15.886 --> 00:01:18.636
+So here's my annotation demo app,
+
+31
+00:01:20.068 --> 00:01:24.060
+and I'm going to move down to lines 13 and 14,
+
+32
+00:01:24.060 --> 00:01:25.804
+so this is where we actually get the bean
+
+33
+00:01:25.804 --> 00:01:28.738
+from the Spring container, and I'm going to modify
+
+34
+00:01:28.738 --> 00:01:32.747
+this code now to actually use the default bean id,
+
+35
+00:01:32.747 --> 00:01:36.172
+so instead of using thatSillyCoach,
+
+36
+00:01:36.172 --> 00:01:39.755
+I'm actually going to remove this reference
+
+37
+00:01:41.733 --> 00:01:45.007
+and instead I'll use the default bean id,
+
+38
+00:01:45.007 --> 00:01:47.759
+tennisCoach, again same name as the class,
+
+39
+00:01:47.759 --> 00:01:50.336
+the first character is lowercase.
+
+40
+00:01:50.336 --> 00:01:52.240
+So that'll actually retrieve this bean
+
+41
+00:01:52.240 --> 00:01:54.608
+from the Spring container, then I can use it
+
+42
+00:01:54.608 --> 00:01:56.858
+later on in my application.
+
+43
+00:01:57.836 --> 00:02:01.925
+Alright, so this looks pretty good so far.
+
+44
+00:02:01.925 --> 00:02:04.017
+Alright so let's go ahead and save this application.
+
+45
+00:02:04.017 --> 00:02:05.643
+Let's go ahead and run it.
+
+46
+00:02:05.643 --> 00:02:07.661
+So I'll simply do my right click,
+
+47
+00:02:07.661 --> 00:02:11.828
+I choose run as, I choose run as a Java application.
+
+48
+00:02:14.478 --> 00:02:15.709
+Okay great, so it's up and running.
+
+49
+00:02:15.709 --> 00:02:17.209
+Here's our output.
+
+50
+00:02:18.379 --> 00:02:20.701
+So we read the information from the configuration file.
+
+51
+00:02:20.701 --> 00:02:23.336
+It does the component scanning, and good,
+
+52
+00:02:23.336 --> 00:02:25.449
+so we get our output, practice your backhand volley,
+
+53
+00:02:25.449 --> 00:02:27.028
+so this is good, so it means that hey,
+
+54
+00:02:27.028 --> 00:02:29.823
+it found the bean and we were able to call our method on,
+
+55
+00:02:29.823 --> 00:02:30.845
+so this is all good,
+
+56
+00:02:30.845 --> 00:02:33.295
+so the use of that default bean id
+
+57
+00:02:33.295 --> 00:02:36.781
+worked out just fine for us, and that's great.
+
+58
+00:02:36.781 --> 00:02:38.232
+I'm kind of happy about that.
+
+59
+00:02:38.232 --> 00:02:41.123
+But I want to try and break some things here.
+
+60
+00:02:41.123 --> 00:02:44.543
+When everything runs fine, you're like okay, cool,
+
+61
+00:02:44.543 --> 00:02:46.266
+it's fine, but let's try and break it,
+
+62
+00:02:46.266 --> 00:02:48.657
+and the way I'm going to try and break this
+
+63
+00:02:48.657 --> 00:02:52.698
+is that when I get the bean from the Spring container,
+
+64
+00:02:52.698 --> 00:02:55.561
+instead of using the default id,
+
+65
+00:02:55.561 --> 00:02:57.644
+I'm actually going to use thatSillyCoach.
+
+66
+00:02:57.644 --> 00:03:00.313
+That's what I had before.
+
+67
+00:03:00.313 --> 00:03:01.451
+I'm going to use thatSillyCoach,
+
+68
+00:03:01.451 --> 00:03:05.451
+but our TennisCoach doesn't have thatSillyCoach.
+
+69
+00:03:06.944 --> 00:03:08.427
+They're simply using the default id,
+
+70
+00:03:08.427 --> 00:03:11.353
+so here I'm trying to call thatSillyCoach,
+
+71
+00:03:11.353 --> 00:03:15.160
+you know, trying to break things here, okay.
+
+72
+00:03:15.160 --> 00:03:17.961
+So let's run this and let's see what all happens,
+
+73
+00:03:17.961 --> 00:03:21.461
+so right click, run as a Java application.
+
+74
+00:03:22.588 --> 00:03:26.204
+And it's running and then it kind of blows up on us,
+
+75
+00:03:26.204 --> 00:03:29.862
+you know, with the exception and this ugly stack trace.
+
+76
+00:03:29.862 --> 00:03:30.862
+Aye aye aye.
+
+77
+00:03:31.951 --> 00:03:33.252
+Alright, let's see what the problem is.
+
+78
+00:03:33.252 --> 00:03:36.503
+Oh, no such bean definition, so no bean named
+
+79
+00:03:36.503 --> 00:03:38.708
+thatSillyCoach is a find.
+
+80
+00:03:38.708 --> 00:03:42.540
+Hmm, so the explicit name is not given on the class,
+
+81
+00:03:42.540 --> 00:03:45.439
+so that means when Spring does the component scanning,
+
+82
+00:03:45.439 --> 00:03:49.204
+the bean is registered with its default bean id,
+
+83
+00:03:49.204 --> 00:03:52.185
+so in our code we'd have to use a default bean id
+
+84
+00:03:52.185 --> 00:03:53.961
+to actually retrieve it.
+
+85
+00:03:53.961 --> 00:03:56.491
+Ah, okay so that's it, but this is really good.
+
+86
+00:03:56.491 --> 00:03:58.000
+I'm glad you're seeing this error now
+
+87
+00:03:58.000 --> 00:03:59.465
+because you may see this when you write
+
+88
+00:03:59.465 --> 00:04:01.290
+some of your other Spring applications.
+
+89
+00:04:01.290 --> 00:04:02.902
+You have to make sure you use the correct name
+
+90
+00:04:02.902 --> 00:04:06.385
+when you retreat it, so here back in my code,
+
+91
+00:04:06.385 --> 00:04:09.707
+I'm going back and I'm putting in the default bean id
+
+92
+00:04:09.707 --> 00:04:13.545
+of tennisCoach, just to make sure that everything
+
+93
+00:04:13.545 --> 00:04:16.661
+will work properly because it's actually defined
+
+94
+00:04:16.661 --> 00:04:18.828
+using the default bean id.
+
+95
+00:04:20.168 --> 00:04:21.839
+Right click, run as, Java app,
+
+96
+00:04:21.839 --> 00:04:23.802
+and this time everything's going to work out just fine
+
+97
+00:04:23.802 --> 00:04:25.322
+for us, just like it did earlier
+
+98
+00:04:25.322 --> 00:04:27.761
+when we first ran the application,
+
+99
+00:04:27.761 --> 00:04:30.106
+so it found the bean and it printed out the method
+
+100
+00:04:30.106 --> 00:04:31.973
+and so on, so again, just make sure you use
+
+101
+00:04:31.973 --> 00:04:35.400
+the correct bean id when you write your application,
+
+102
+00:04:35.400 --> 00:04:39.498
+so either a explicit bean id or the default bean id,
+
+103
+00:04:39.498 --> 00:04:42.598
+and it all depends on how that bean is actually defined,
+
+104
+00:04:42.598 --> 00:04:44.200
+and you can always find this out
+
+105
+00:04:44.200 --> 00:04:45.861
+by simply looking at the source code
+
+106
+00:04:45.861 --> 00:04:47.403
+and looking at the definition
+
+107
+00:04:47.403 --> 00:04:50.514
+of the at component annotation.
+
+108
+00:04:50.514 --> 00:04:51.983
+Alright, so hopefully you enjoyed this.
+
+109
+00:04:51.983 --> 00:04:53.346
+We showed you the happy path
+
+110
+00:04:53.346 --> 00:04:55.849
+and then I also showed you what will happen
+
+111
+00:04:55.849 --> 00:04:58.177
+if I break it and we run into errors,
+
+112
+00:04:58.177 --> 00:05:00.320
+and then finally how to put it all back together
+
+113
+00:05:00.320 --> 00:05:01.834
+and resolve it.
+
+114
+00:05:01.834 --> 00:05:03.018
+Okay great.
+
+115
+00:05:03.018 --> 00:05:05.536
+So these are some really good tips and tricks for you.
+
+116
+00:05:05.536 --> 00:05:07.499
+You were successful here in making use
+
+117
+00:05:07.499 --> 00:05:08.900
+of the default bean id,
+
+118
+00:05:08.900 --> 00:05:11.399
+and I say congratulations and I will see you
+
+119
+00:05:11.399 --> 00:05:12.899
+in the next video.
+
